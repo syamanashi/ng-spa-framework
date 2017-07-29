@@ -7,11 +7,14 @@ export interface IconFiles {
 }
 
 export interface FrameworkConfigSettings {
+  socialIcons?: Array<IconFiles>;
   showLanguageSelector?: boolean;
   showUserControls?: boolean;
   showStatusBar?: boolean;
   showStatusBarBreakpoint?: number;
-  socialIcons?: Array<IconFiles>;
+  companyName?: string;
+  showCopyright?: boolean;
+  copyrightSince?: string;
 }
 
 /**
@@ -23,15 +26,8 @@ export interface FrameworkConfigSettings {
 @Injectable()
 export class FrameworkConfigService {
 
-  /** Company Name that appears in the footer */
-  companyName = 'Suttonsoft, Inc.';
-
-  /** Whether or not the copyright message appears in the status bar/footer.  Defaults to true. */
-  showCopyright = true;
-
-  /** First year of copyright that appears in the footer. Defaults to empty string. */
-  copyrightSince = '';
-
+  /** Array of social icons image file objects. */
+  socialIcons = new Array<IconFiles>();
 
   /** Whether or not the LanguageSelector drop down appears.  Defaults to true. */
   showLanguageSelector = true;
@@ -45,8 +41,15 @@ export class FrameworkConfigService {
   /** Sets the status bar breakpoint.   Defaults to 0. */
   showStatusBarBreakpoint = 0;
 
-  /** Array of social icons image file objects. */
-  socialIcons = new Array<IconFiles>();
+    /** Company Name that appears in the footer */
+  companyName = 'Suttonsoft, Inc.';
+
+  /** Whether or not the copyright message appears in the status bar/footer.  Defaults to true. */
+  showCopyright = true;
+
+  /** First year of copyright that appears in the footer. Defaults to empty string. */
+  copyrightSince = '';
+
 
   /** Accepts an object that implements FrameworkConfigSettings, overriding config default values,
    *  and adding these settings to the framework's "this" scope.

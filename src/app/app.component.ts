@@ -22,6 +22,9 @@ export class AppComponent {
       showUserControls: true,
       showStatusBar: true,
       showStatusBarBreakpoint: 800,
+      companyName: 'Green Nations',
+      showCopyright: true,
+      copyrightSince: '2011',
     };
 
     frameworkConfigService.configure(config);
