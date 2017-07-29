@@ -3,3 +3,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     // font-family: 'Roboto', sans-serif;
 }
+
+// don't do this:
+// .title-bar {
+//     background-color: pink !important;
+// }
+
+// instead, do this for 'app' prefixed classes:
+.app-title-bar {
+    background-color: #fff;
+}
