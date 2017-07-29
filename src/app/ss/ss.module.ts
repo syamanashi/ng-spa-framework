@@ -5,13 +5,14 @@ import { ContentComponent } from './content/content.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { FrameworkConfigService } from './services/framework-config.service';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { StatusBarComponent } from './status-bar/status-bar.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent],
-  exports: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent],
+  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent],
+  exports: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent],
   providers: [FrameworkConfigService],
 })
 export class SsModule { }
