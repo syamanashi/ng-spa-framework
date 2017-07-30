@@ -12,6 +12,7 @@ export class ScreenLargeDirective implements OnDestroy {
     /** whether or not the calling element should exist on a large screen */
     private hasView = false;
 
+    /** Reference to the screensize observable subscription (necessary so we can unsubscribe from the observable on destroy) */
     private screenSubscription: Subscription;
 
     constructor(
@@ -19,6 +20,7 @@ export class ScreenLargeDirective implements OnDestroy {
         private template: TemplateRef<Object>, // passed in by the * symbol when the directive is called
         private screenService: ScreenService
     ) {
+        // Set the local component property to the subscription in order to keep a reference to the observable subscription so we can unsubscribe later (upon ngDestroy).  This prevents related memory leaks and performance problems.
         this.screenSubscription = screenService.resize$.subscribe(() => this.onResize()); // Fires onResize() as onNext() handler for when resize$ emits its next() trigger.
     }
 
@@ -39,6 +41,9 @@ export class ScreenLargeDirective implements OnDestroy {
         }
     }
 
+    /** Unsubscribe from our screenService upon destroy.
+     *  Very important to prevent memory leaks.
+     */
     ngOnDestroy() {
         this.screenSubscription.unsubscribe();
     }
