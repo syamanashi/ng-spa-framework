@@ -1,5 +1,5 @@
 <!--Small Screen-->
-<div *ngIf="!screenService.isLarge()" class="title-bar-small"><!-- (click)="menuService.toggleLeftSideMenu()" -->
+<div *screenBelowLarge class="title-bar-small"><!-- (click)="menuService.toggleLeftSideMenu()" -->
   <i class="fa fa-bars fa-2x fa-fw" aria-hidden="true"></i>
   <div class="small-image-holder">
     <img src="assets/images/logo.png" class="small-image">
@@ -13,7 +13,7 @@
 
 
 <!--Large Screen-->
-<div *ngIf="screenService.isLarge()" class="title-bar app-title-bar">
+<div *screenLarge class="title-bar app-title-bar">
   <img src="assets/images/logo.png" alt="Green Nations Logo">
   <div class="menu-area">
      <ss-top-bar></ss-top-bar> 
