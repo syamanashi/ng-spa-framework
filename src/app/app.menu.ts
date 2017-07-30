@@ -1,4 +1,4 @@
-import { MenuItem } from './ss/services/menu.service';
+import { MenuItem } from './ss/menus/menu-item/menu-item.model';
 
 export const initialMenuItems: Array<MenuItem> = [
     {
