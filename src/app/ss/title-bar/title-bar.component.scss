@@ -28,7 +28,8 @@
 }
 
 .small-image {
-    height: 50px;
+    // height: 50px;
+    height: 30px;
 }
 
 
@@ -48,22 +49,19 @@ i.fa {
     // color: #424242;
     // color: #55596d;
     // color: #83889e;
-    color: #5e6172;
-    font-size: 1.6em;
+    // color: #5e6172;
+    
 }
 
-// i.fa-ellipsis-v {
-//     margin-right: 10%;
-// }
-
-// .btn-sm {
-//     min-width: 60px;
-// }
-
 i.fa-bars {
+    // font-size: 1.8em;
     margin-left: 12px;
+    color: #424242;
 }
 
 i.fa-cog {
-    margin-right: 12px;
+    font-size: 1.4em;
+    margin-right: 10px;
+    // color: #5e6172;
+    color: #83889e;
 }
