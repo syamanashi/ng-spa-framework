@@ -1,4 +1,19 @@
-<div class="title-bar app-title-bar">
+<!--Small Screen-->
+<div *ngIf="!screenService.isLarge()" class="title-bar-small"><!-- (click)="menuService.toggleLeftSideMenu()" -->
+  <i class="fa fa-bars fa-2x fa-fw" aria-hidden="true"></i>
+  <div class="small-image-holder">
+    <img src="assets/images/logo.png" class="small-image">
+  </div>
+  <i class="fa fa-cog fa-2x fa-fw" aria-hidden="true"></i>
+  <!-- <a class="btn btn-secondary btn-sm" aria-label="Settings"> -->
+    <!-- <i class="fa fa-ellipsis-v fa-2x fa-fw" aria-hidden="true"></i> -->
+  <!-- </a> -->
+  <!-- <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i> -->
+</div> <!--/small screen-->
+
+
+<!--Large Screen-->
+<div *ngIf="screenService.isLarge()" class="title-bar app-title-bar">
   <img src="assets/images/logo.png" alt="Green Nations Logo">
   <div class="menu-area">
      <ss-top-bar></ss-top-bar> 

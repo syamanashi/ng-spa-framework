@@ -5,8 +5,7 @@
 .title-bar {
     flex-grow: 1;
     display: flex;
-    min-height: 80px;
-    // background-color: #eee; // for testing only.
+    min-height: 80px; // background-color: #eee; // for testing only.
 }
 
 .menu-area {
@@ -14,4 +13,57 @@
     flex-direction: column;
     flex-grow: 1;
     padding-right: 20px;
+}
+
+.title-bar-small {
+    flex-grow: 1;
+    display: flex;
+    min-height: 56px;
+}
+
+.small-image-holder {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.small-image {
+    height: 50px;
+}
+
+
+/* span holds buttons */
+
+span {
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+
+/* font-awesome */
+i.fa {
+    margin-top: 10px;
+    // color: #424242;
+    // color: #55596d;
+    // color: #83889e;
+    color: #5e6172;
+    font-size: 1.6em;
+}
+
+// i.fa-ellipsis-v {
+//     margin-right: 10%;
+// }
+
+// .btn-sm {
+//     min-width: 60px;
+// }
+
+i.fa-bars {
+    margin-left: 12px;
+}
+
+i.fa-cog {
+    margin-right: 12px;
 }
