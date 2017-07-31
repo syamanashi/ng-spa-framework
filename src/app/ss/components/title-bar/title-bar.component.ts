@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { ScreenService } from '../services/screen.service';
-import { MenuService } from '../services/menu.service';
+import { ScreenService } from '../../services/screen.service';
+import { MenuService } from '../../services/menu.service';
 
 /**
  * Displays the Title Bare of the framework whic includes a logo.png and the configurable Top Bar.

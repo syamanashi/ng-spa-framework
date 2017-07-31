@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FrameworkConfigService } from '../services/framework-config.service';
+import { FrameworkConfigService } from '../../services/framework-config.service';
 
 /**
  * StatusBarComponent paints a solid dark bar across the bottom of the page and includes a copyright string in light font.

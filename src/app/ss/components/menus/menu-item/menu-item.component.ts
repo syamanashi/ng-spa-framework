@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { MenuItem } from './menu-item.model';
-import { MenuService } from '../../services/menu.service';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
   selector: 'ss-menu-item',
