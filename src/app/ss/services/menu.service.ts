@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { MenuItem } from '../menus/menu-item/menu-item.model';
+import { MenuItem } from '../components/menus/menu-item/menu-item.model';
 
 @Injectable()
 export class MenuService {
@@ -17,6 +17,10 @@ export class MenuService {
   toggleLeftSideMenu(): void {
     this.isVertical = true; // Set isVertical to true since toggleLeftSideMenu() only gets called when *screenBelowLarge is true.
     this.showingLeftSideMenu = !this.showingLeftSideMenu;
+  }
+
+  toggleMenuOrientation(): void {
+    this.isVertical = !this.isVertical;
   }
 
 }
