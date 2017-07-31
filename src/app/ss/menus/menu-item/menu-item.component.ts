@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { MenuItem } from './menu-item.model';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'ss-menu-item',
@@ -11,7 +12,7 @@ export class MenuItemComponent implements OnInit {
 
   @Input() item: MenuItem;
 
-  constructor() { }
+  constructor(protected menuService: MenuService) { }
 
   ngOnInit() {
   }

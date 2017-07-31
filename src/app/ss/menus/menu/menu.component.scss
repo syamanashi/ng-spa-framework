@@ -12,7 +12,7 @@
     padding-left: 4px;
     flex-grow: 0; // this menu has a static width, so we don't want it to grow
     background-color: #555;
-    overflow: auto; // allows scrollable long menu
+    overflow: auto; // allows vertically scrollable long menu
 }
 
 ul {

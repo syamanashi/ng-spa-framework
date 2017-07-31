@@ -6,7 +6,6 @@ import { MenuItem } from '../menus/menu-item/menu-item.model';
 export class MenuService {
 
   items: Array<MenuItem>;
-
-  constructor() { }
+  isVertical = false;
 
 }

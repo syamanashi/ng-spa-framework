@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MenuService } from '../services/menu.service';
+
 @Component({
   selector: 'ss-content',
   templateUrl: './content.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected menuService: MenuService) { }
 
   ngOnInit() {
   }

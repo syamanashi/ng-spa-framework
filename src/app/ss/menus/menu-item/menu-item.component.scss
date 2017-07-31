@@ -21,7 +21,7 @@
 
 /* add/override :host properties when this element has the .vertical-menu class */
 :host(.vertical-menu) {
-    display: block; // each item on it's own line
+    display: block; // puts each item on it's own line
     margin-left: 0;
     margin-top: 6px;
     margin-bottom: 6px;
