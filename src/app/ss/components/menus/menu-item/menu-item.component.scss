@@ -66,6 +66,10 @@ span {
     background-color: #dfd;
 }
 
+.menu-item:focus {
+    outline: none;
+}
+
 .menu-item.vertical-menu:hover {
     background-color: green;
 }
