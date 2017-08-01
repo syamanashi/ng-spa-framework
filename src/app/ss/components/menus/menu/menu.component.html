@@ -1,7 +1,13 @@
 <nav>
   <ul>
     <li *ngFor="let item of menuService.items">
-      <ss-menu-item [item]="item" [ngClass]="{ 'vertical-menu': menuService.isVertical }"></ss-menu-item>
+      <ss-menu-item
+        [item]="item"
+        [ngClass]="{ 'vertical-menu': menuService.isVertical }"
+        [parentIsPopup]="false"
+      >
+
+      </ss-menu-item>
     </li>
   </ul>
 </nav>

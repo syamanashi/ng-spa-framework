@@ -1,0 +1,30 @@
+/*
+    HORIZONTAL POPUP MENU
+        :host used for the popup-menu.component itself 
+        Note: We will use angular to set the coordinates for each individual popup.
+        So, we in CSS we set position to absolute which will allow us to do this.
+        TODO: Find a maintainable way to make these classes dynamic - or at least themed.
+ */
+:host {
+    position: absolute; // popup menu can float around the screen (usually placed directly under the mouse-over item which could be anywhere on screen)
+    display: inline-block; // occupies full width available
+    width: 162px; // TODO: Make this width value data-driven in angular
+    background-color: white; // white popup.  TODO: make this value data-driven in angular
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px #aaa;
+}
+
+/*
+    VERTICAL SUB-MENU
+        :host(.vertical-menu) used for menu embedded on the left-hand of the screen (and therefore, it's not actually a popup)
+        This class is added to ss-popup-menu in menu-item.component.html when menuService.isVertical is true.
+*/
+:host(.vertical-menu) {
+    position: static; // allows css engine to render
+    display: block;
+    width: 100%; // ensures that our menu arrow icons line up
+    background-color: transparent; // allows us to pick up the background color of the menu itself.
+    border: none;
+    box-shadow: none;
+    padding: 2px 0 0 0;
+}

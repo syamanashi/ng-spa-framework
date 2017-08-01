@@ -14,13 +14,14 @@ import { ScreenBelowLargeDirective } from './directives/screen-below-large.direc
 import { MenuService } from './services/menu.service';
 import { MenuComponent } from './components/menus/menu/menu.component';
 import { MenuItemComponent } from './components/menus/menu-item/menu-item.component';
+import { PopupMenuComponent } from './components/menus/popup-menu/popup-menu.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
   ],
-  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent],
+  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent],
   exports: [FrameworkBodyComponent], // , ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, MenuComponent
   providers: [FrameworkConfigService, ScreenService, MenuService],
 })
