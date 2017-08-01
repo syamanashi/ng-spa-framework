@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { CountryDetailComponent } from './components/country-detail/country-detail.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
+import { CountryMaintComponent } from './components/country-maint/country-maint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CountriesComponent,
-    SettingsComponent
+    SettingsComponent,
+    CountryDetailComponent,
+    CountryListComponent,
+    CountryMaintComponent
   ],
   imports: [
     BrowserModule,
