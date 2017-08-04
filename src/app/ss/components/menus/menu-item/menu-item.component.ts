@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { MenuItem } from './menu-item.model';
 import { MenuService } from '../../../services/menu.service';
@@ -40,6 +40,23 @@ export class MenuItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Update this.isActiveRoute on load:
+    this.checkActiveRoute(this.router.url);
+
+    // Update this.isActiveRoute when route changes (and the routing event has completed):
+    // Subscribe to the router.events observable and if routing has completed, update this.isActiveRoute using the checkActiveRoute helper function.
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // event instanceof NavigationEnd indicates that routing has completed: NavigationEnd represents an event triggered when a navigation ends successfully.
+        this.checkActiveRoute(event.url);
+        // console.log(event.url + ' ' + this.item.route + ' ' + this.isActiveRoute);
+      }
+    });
+  }
+
+  /** Sets isActiveRoute, called when this element/menu item gets created or when the route changes  */
+  checkActiveRoute(route: string) {
+    this.isActiveRoute = (route === '/' + this.item.route); // set true if route === "/" + this.item.route
   }
 
   /** Mouse handler for mouseenter of horizontal popup menu spawned by this menu-item. Sets mouseInPopup to true. We're only interested in the Horizontal menu in the title bar since the vertical menu is does not actually spawn a popup menu. */
