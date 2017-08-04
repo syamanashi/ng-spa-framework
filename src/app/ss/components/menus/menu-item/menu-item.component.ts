@@ -36,6 +36,7 @@ export class MenuItemComponent implements OnInit {
   constructor(
     protected menuService: MenuService,
     private router: Router,
+    private elementRef: ElementRef,
   ) { }
 
   ngOnInit() {
@@ -77,6 +78,32 @@ export class MenuItemComponent implements OnInit {
     if (!this.menuService.isVertical) {
       this.mouseInItem = false;
     }
+  }
+
+  /** Click handler for this entire menu-item component. Listens for click events in vertical menu to display popup.  (Horizontal menu display driven by mouseenver/mouseleave events) */
+  // Use @HostListener to bind to the host element's click event
+  @HostListener('click', ['$event']) // binds to the host element's click event and grabs the event argument
+  onClick(event): void {
+
+    event.stopPropagation(); // prevents click event from being sent up to any parent elements.
+
+    // Every menu-item should have either a submenu or a route. A click on a menu-item that has a route navigates the user to the route.  In the vertical menu, a click will open a submenu if one exists. (We are ignoring horisontal menus here since their submenu is display on rollover-mouseenter events).
+    if (this.item.submenu) {
+      // if this menu item has sub-menu items...
+      if (this.menuService.isVertical) {
+        // if we are inside a vertical menu...
+        this.mouseInPopup = !this.mouseInPopup; // Toggles the mouseInPopup property which tells us whether or not to display the (vertical) "popup" submenu items.
+      }
+    } else if (this.item.route) {
+      // else if this item has no sub-menu item but has a route...
+      //     Force horizontal menus to close by sending a mouseleave event
+      const newEvent = new MouseEvent('mouseleave', { bubbles: true }); // Programatically creates a 'mouseleave' event who will bubble up the DOM tree (ensuring that all sub, sub-sub-menues, etc close since we might be in a deeply nested submenu item).
+      this.elementRef.nativeElement.dispatchEvent(newEvent);            // Allows Angular work with the DOM for us by dispatching the newly created 'mouseleave' event that bubbles up the DOM tree - from this menu-item components DOM element.  Thus, any horizontal menus will close.
+      this.router.navigate(['/' + this.item.route]);                    // Navigates user to this menu-item's route.
+      this.menuService.showingLeftSideMenu = false;                     // Closes the mobile LeftSideMenu
+      // TODO: ^ Add a config var to set whether or not we want the LeftSideMenu to be hidden/closed after mobile menu item clicks.  For now, it will be closed following route clicks.
+    }
+
   }
 
 }
