@@ -9,9 +9,11 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { CountryDetailComponent } from './components/country-detail/country-detail.component';
 import { CountryMaintComponent } from './components/country-maint/country-maint.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { RegisterUserComponent } from './ss/components/users/register-user/register-user.component';
 
 const routes: Routes = [
   { path: 'signin', component: SignInComponent },
+  { path: 'register', component: RegisterUserComponent },
   {
     path: 'authenticated', component: AuthenticatedUserComponent,
     children: [

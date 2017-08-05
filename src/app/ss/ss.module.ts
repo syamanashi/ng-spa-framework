@@ -18,6 +18,7 @@ import { MenuComponent } from './components/menus/menu/menu.component';
 import { MenuItemComponent } from './components/menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './components/menus/popup-menu/popup-menu.component';
 import { SignInComponent } from './components/users/sign-in/sign-in.component';
+import { RegisterUserComponent } from './components/users/register-user/register-user.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { SignInComponent } from './components/users/sign-in/sign-in.component';
     FormsModule,
     RouterModule,
   ],
-  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent, SignInComponent],
+  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent, SignInComponent, RegisterUserComponent],
   exports: [FrameworkBodyComponent], // , ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, MenuComponent
   providers: [FrameworkConfigService, ScreenService, MenuService],
 })
