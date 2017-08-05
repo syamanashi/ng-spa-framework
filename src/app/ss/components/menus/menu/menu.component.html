@@ -13,7 +13,7 @@
 </nav>
 
 <button
-  *ngIf="!menuService.showingLeftHandSideMenu"
+  *ngIf="!menuService.showingLeftSideMenu"
   class="btn btn-sm btn-secondary"
   [ngClass]="{ 'horizontal': !menuService.isVertical }"
   (click)="menuService.toggleMenuOrientation()">
