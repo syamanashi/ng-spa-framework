@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { SsModule } from './ss/ss.module';
+import { UserApi } from './ss/components/users/user-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { CountryDetailComponent } from './components/country-detail/country-deta
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CountryMaintComponent } from './components/country-maint/country-maint.component';
 import { AuthenticatedUserComponent } from './components/authenticated-user/authenticated-user.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { AuthenticatedUserComponent } from './components/authenticated-user/auth
     AppRoutingModule,
     SsModule,
   ],
-  providers: [],
+  providers: [
+    UserService, // same as pointing the token 'UserService' to the class 'UserService' like this: { provide: UserService, userClass: UserService }
+    { provide: UserApi, useExisting: UserService }, // Provides the UserApi Token that (points to) binds the app UserService to the framework UserApi. Now we can inject the UserApi token into our framework sign-in component form.
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
