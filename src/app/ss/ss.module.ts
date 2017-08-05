@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
@@ -16,14 +17,16 @@ import { MenuService } from './services/menu.service';
 import { MenuComponent } from './components/menus/menu/menu.component';
 import { MenuItemComponent } from './components/menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './components/menus/popup-menu/popup-menu.component';
+import { SignInComponent } from './components/users/sign-in/sign-in.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
     RouterModule,
   ],
-  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent],
+  declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent, SignInComponent],
   exports: [FrameworkBodyComponent], // , ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, MenuComponent
   providers: [FrameworkConfigService, ScreenService, MenuService],
 })

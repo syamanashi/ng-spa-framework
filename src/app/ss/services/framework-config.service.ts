@@ -50,6 +50,12 @@ export class FrameworkConfigService {
   /** First year of copyright that appears in the footer. Defaults to empty string. */
   copyrightSince = '';
 
+  /**
+   * TODO: Add these to the framework config
+   * - background-img
+   * - logo-img
+   */
+
 
   /** Accepts an object that implements FrameworkConfigSettings, overriding config default values,
    *  and adding these settings to the framework's "this" scope.

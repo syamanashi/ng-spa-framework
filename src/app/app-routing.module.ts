@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthenticatedUserComponent } from './components/authenticated-user/authenticated-user.component';
+import { SignInComponent } from './ss/components/users/sign-in/sign-in.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CountryListComponent } from './components/country-list/country-list.component';

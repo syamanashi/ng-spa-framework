@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; // 100% of the viewport height = full height of the viewport/screen/window/etc
+    width: 100vw;  // 100% of the viewport width = full width of the viewport/screen/window/etc
+    background-image: url('/assets/images/mountains.jpg');
+    background-position: center center; // image centered both vertically and horizontally
+    background-size: cover; // image covers the entire background
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 260px;
+    background-color: white;
+    opacity: .93; // allows background-image to slightly show through.
+    padding: 20px;
+    // margin-right: 20px;
+}
+
+a {
+    line-height: 32px;
+}
+
+button {
+    float: right;
+}
+
+.message {
+    float: right;
+}
+
+.logo {
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}

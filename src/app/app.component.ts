@@ -15,6 +15,7 @@ import { initialMenuItems } from './app.menu';
 export class AppComponent {
   title = 'app';
 
+  // Use the depencency injection engine creates an instance of FrameworkConfigService.
   constructor(
     private frameworkConfigService: FrameworkConfigService,
     private menuService: MenuService,
