@@ -1,23 +1,33 @@
 <div class="menu-item"
   [ngClass]="{ 'vertical-menu': menuService.isVertical, 'router-link-active': isActiveRoute }"
   (click)="menuService.showingLeftSideMenu = false;"
->
+  >
+  <!--Note:
+    > [ngClass]="{ 'vertical-menu': menuService.isVertical }" adds 'vertical-menu' class if we are currently displaying the vertical menu
+    > [ngClass]="{ 'router-link-active': isActiveRoute }" adds 'router-link-active' class if isActiveRoute is true telling us that that this menu item is the active route
+  -->
   <i class="fa {{ item.icon }}" aria-hidden="true"></i>
   <span>{{ item.text.toUpperCase() }}</span>
+
+  <!-- Arrow indicators for nested "popup" submenus: -->
+  <i *ngIf="item.submenu && !parentIsPopup && !menuService.isVertical" class="fa fa-angle-down"></i>
+  <i *ngIf="item.submenu && parentIsPopup && !menuService.isVertical" class="fa fa-angle-right"></i>
+  <i *ngIf="item.submenu && menuService.isVertical && !(mouseInPopup || mouseInItem)" class="fa fa-angle-right"></i>
+  <i *ngIf="item.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" class="fa fa-angle-down"></i>
 </div>
 
 <ss-popup-menu
-    *ngIf="mouseInPopup || mouseInItem"
-    [menuItems]="item.submenu"
-    [ngClass]="{ 'vertical-menu': menuService.isVertical }"
-    (mouseleave)="onPopupMouseLeave($event)"
-    (mouseenter)="onPopupMouseEnter($event)"
-    [style.left.px]="popupLeft"
-    [style.top.px]="popupTop"
->
-     <!-- @visibilityChanged> @visibilityChanged applies the trigger named 'visibilityChanged' to our popup-menu -->
-    <!--
-      Note: we do not want to use mousein/mouseout as they pick up events on child elements which would interfere with our two span children
-      mouseleave/mouseenter events ignore events emitted from children elements
-    -->
+  *ngIf="mouseInPopup || mouseInItem"
+  [menuItems]="item.submenu"
+  [ngClass]="{ 'vertical-menu': menuService.isVertical }"
+  (mouseleave)="onPopupMouseLeave($event)"
+  (mouseenter)="onPopupMouseEnter($event)"
+  [style.left.px]="popupLeft"
+  [style.top.px]="popupTop"
+  >
+  <!-- @visibilityChanged> @visibilityChanged applies the trigger named 'visibilityChanged' to our popup-menu -->
 </ss-popup-menu>
+<!--
+  Note: we do not want to use mousein/mouseout as they pick up events on child elements which would interfere with our two span children
+  mouseleave/mouseenter events ignore events emitted from children elements
+-->

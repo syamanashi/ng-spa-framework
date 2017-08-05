@@ -39,11 +39,12 @@ span {
 
 // TODO: Add more .fa styling if needed.
 .fa {
-    margin: 0 4px 0 4px;
+    margin: 0 8px 0 4px;
 }
 
-.fa-menu-left, .fa-menu-right, .fa-menu-down {
+.fa-angle-down, .fa-angle-right, .fa-angle-left, .fa-angle-up {
     float: right;
+    padding-left: 18px; // minimum padding for horizontal menu arrow alignment.
 }
 
 .menu-item {
