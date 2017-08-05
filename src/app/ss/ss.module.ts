@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { FrameworkBodyComponent } from './components/framework-body/framework-body.component';
@@ -19,6 +20,7 @@ import { PopupMenuComponent } from './components/menus/popup-menu/popup-menu.com
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule,
   ],
   declarations: [FrameworkBodyComponent, ContentComponent, TitleBarComponent, TopBarComponent, StatusBarComponent, ScreenLargeDirective, ScreenBelowLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent],

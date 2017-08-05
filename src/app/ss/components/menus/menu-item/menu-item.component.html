@@ -24,8 +24,9 @@
   (mouseenter)="onPopupMouseEnter($event)"
   [style.left.px]="popupLeft"
   [style.top.px]="popupTop"
+  [@visibilityChanged]
   >
-  <!-- @visibilityChanged> @visibilityChanged applies the trigger named 'visibilityChanged' to our popup-menu -->
+  <!-- Note: @visibilityChanged attribute applies the trigger named 'visibilityChanged' to our popup-menu -->
 </ss-popup-menu>
 <!--
   Note: we do not want to use mousein/mouseout as they pick up events on child elements which would interfere with our two span children

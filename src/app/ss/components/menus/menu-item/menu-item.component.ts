@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+import {  Component, ElementRef, HostBinding, HostListener, Input, OnInit, trigger, style, transition, animate } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 import { MenuItem } from './menu-item.model';
@@ -7,7 +7,18 @@ import { MenuService } from '../../../services/menu.service';
 @Component({
   selector: 'ss-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.scss']
+  styleUrls: ['./menu-item.component.scss'],
+  animations: [
+    trigger('visibilityChanged', [        // 'visibilityChanged' is just the arbitrary name we are applying to this animation.  Pass an array to trigger.
+      transition(':enter', [              // Adds fade-in transition for when element is first added to the DOM. :enter is alias to 'void => *' which is when the element is first added to the DOM - which is when we want out fade in to occur. (void means the element does not exist yet in the DOM.  * means any possible state that is visible.)
+        style({ opacity: 0 }),
+        animate(350, style({ opacity: 1 }))  // Over course of 350 milliseconds, animate opacity from its prior state (0) to 1.
+      ]),
+      transition(':leave', [              // Adds fade-out transition for when element is removed from the DOM. :leave is alias to '* => void' - going from any visual state to being removed from the DOM
+        animate(100, style({ opacity: 0 }))  // over course of 100 milliseconds, animates opacity from prior state (1) to 0.
+      ])
+    ])
+  ],
 })
 export class MenuItemComponent implements OnInit {
 
