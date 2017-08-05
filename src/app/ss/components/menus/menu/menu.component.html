@@ -1,21 +1,12 @@
 <nav>
   <ul>
     <li *ngFor="let item of menuService.items">
-      <ss-menu-item
-        [item]="item"
-        [ngClass]="{ 'vertical-menu': menuService.isVertical }"
-        [parentIsPopup]="false"
-      >
-
-      </ss-menu-item>
+      <ss-menu-item [item]="item" [ngClass]="{ 'vertical-menu': menuService.isVertical }" [parentIsPopup]="false"></ss-menu-item>
     </li>
   </ul>
 </nav>
 
-<button
-  *ngIf="!menuService.showingLeftSideMenu"
-  class="btn btn-sm btn-secondary"
-  [ngClass]="{ 'horizontal': !menuService.isVertical }"
+<button *ngIf="!menuService.showingLeftSideMenu" class="btn btn-sm btn-secondary" [ngClass]="{ 'horizontal': !menuService.isVertical }"
   (click)="menuService.toggleMenuOrientation()">
   <i *ngIf="menuService.isVertical" class="fa fa-chevron-up" aria-hidden="true"></i>
   <i *ngIf="!menuService.isVertical" class="fa fa-chevron-left" aria-hidden="true"></i>
