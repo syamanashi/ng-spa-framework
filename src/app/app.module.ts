@@ -10,6 +10,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { CountryDetailComponent } from './components/country-detail/country-detail.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CountryMaintComponent } from './components/country-maint/country-maint.component';
+import { AuthenticatedUserComponent } from './components/authenticated-user/authenticated-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CountryMaintComponent } from './components/country-maint/country-maint.
     SettingsComponent,
     CountryDetailComponent,
     CountryListComponent,
-    CountryMaintComponent
+    CountryMaintComponent,
+    AuthenticatedUserComponent
   ],
   imports: [
     BrowserModule,
