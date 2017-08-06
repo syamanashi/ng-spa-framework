@@ -34,7 +34,7 @@ export class SignInComponent {
       // UserApi is a token reference to the app's injected UserService, which implements UserApi.
       // UserApi.signIn returns an observable that we can subscribe to.
       this.userApi.signIn(signInForm.value.username, signInForm.value.password, signInForm.value.rememberMe)
-        .subscribe((data) => { // success argument gets call when signIn works fine
+        .subscribe((data) => { // success argument gets call when signIn works fine.
           console.log('got valid: ', data);
           this.router.navigate(['/authenticated']);
         },

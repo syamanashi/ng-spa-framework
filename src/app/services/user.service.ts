@@ -15,7 +15,8 @@ export class UserService implements UserApi {
 
   isAuthenticated = false;
 
-  // Convert these into config vars to help with development:
+  /** Mock development variables to help test error handling. */
+  // TODO: Convert these into config vars to help with development:
   isFakeError = false;
   isFakeDelay = false;
   fakeDelay = 2000;
@@ -23,16 +24,36 @@ export class UserService implements UserApi {
   constructor(private router: Router) { }
 
   signIn(username: string, password: string, rememberMe: boolean): Observable<any> {
-    // TODO: Create an REST API Service that with a signIn method that would get called here.
+    // TODO: Create an REST API Service that with a signIn method that would get called here.  Must return an Observable.
     console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
-    this.isAuthenticated = true;
-    return Observable.of({}).delay(2000);
+
+    if (!this.isFakeError) {
+      this.isAuthenticated = true;
+
+      if (this.isFakeDelay) {
+        return Observable.of({}).delay(this.fakeDelay); // Returns empty reservable.  Adding delay for actual api request/response effect
+      } else {
+        return Observable.of({}); // Returns empty reservable
+      }
+
+    } else {
+
+      // In this case we return an Observable thrown error with an error string that our framework will use.
+      if (this.isFakeDelay) {
+        // Sending an empty object observable in order to add a delay... Then we call flatMap which returns a real observable:
+        // A flatMap has the ability to take our original Observable (x) and replace it with another one.
+        return Observable.of({}).delay(this.fakeDelay).flatMap(x => Observable.throw('Invalid User Name and/or Password'));
+      } else {
+        return Observable.throw('Invalid User Name and/or Password');
+      }
+
+    }
   }
 
   signOut(): Observable<any> {
     this.isAuthenticated = false;
     this.router.navigate(['/signin']);
-    return Observable.of({});
+    return Observable.of({}); // returns empty reservable
   }
 
 }

@@ -15,7 +15,7 @@
 
 /* If host does not contain the class "parent-is-popup", add the margin-left and auto width - activates part of our inline-block display */
 :host:not(.parent-is-popup) {
-    margin-left: 16px;
+    // margin-left: 16px;
     width: auto;
 }
 

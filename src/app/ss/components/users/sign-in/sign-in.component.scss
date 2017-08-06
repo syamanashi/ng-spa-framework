@@ -12,7 +12,7 @@
 .sign-in-form {
     display: flex;
     flex-direction: column;
-    min-width: 320px;
+    min-width: 400px;
     background-color: white;
     opacity: .93; // allows background-image to slightly show through.
     padding: 20px;
@@ -44,3 +44,9 @@ button {
     background-color: #333;
     border-color: #333;
 }
+
+.form-control::-webkit-input-placeholder { color: #bbb; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #bbb; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #bbb; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #bbb; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #bbb; }  /* Microsoft Edge */
