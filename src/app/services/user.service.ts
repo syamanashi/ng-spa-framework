@@ -30,10 +30,10 @@ export class UserService implements UserApi {
     if (!this.isFakeError) {
       this.isAuthenticated = true;
 
-      if (this.isFakeDelay) {
-        return Observable.of({}).delay(this.fakeDelay); // Returns empty reservable.  Adding delay for actual api request/response effect
+      if (!this.isFakeDelay) {
+        return Observable.of({}); // SUCCESS: Returns empty reservable.
       } else {
-        return Observable.of({}); // Returns empty reservable
+        return Observable.of({}).delay(this.fakeDelay); // Returns empty reservable.  Adding delay for actual api request/response effect
       }
 
     } else {

@@ -13,6 +13,7 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { CountryMaintComponent } from './components/country-maint/country-maint.component';
 import { AuthenticatedUserComponent } from './components/authenticated-user/authenticated-user.component';
 import { UserService } from './services/user.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserService } from './services/user.service';
   providers: [
     UserService, // same as pointing the token 'UserService' to the class 'UserService' like this: { provide: UserService, userClass: UserService }
     { provide: UserApi, useExisting: UserService }, // Provides the UserApi Token that (points to) binds the app UserService to the framework UserApi. Now we can inject the UserApi token into our framework sign-in component form.
+    AuthGuardService,
   ],
   bootstrap: [AppComponent]
 })
