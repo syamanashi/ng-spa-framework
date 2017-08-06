@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FrameworkConfigService } from '../../services/framework-config.service';
+import { UserApi } from '../users/user-api';
 
 @Component({
   selector: 'ss-top-bar',
@@ -9,9 +10,16 @@ import { FrameworkConfigService } from '../../services/framework-config.service'
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(protected frameworkConfigService: FrameworkConfigService) { }
+  constructor(
+    protected frameworkConfigService: FrameworkConfigService,
+    private userApi: UserApi,
+  ) { }
 
   ngOnInit() {
+  }
+
+  signOut() {
+    this.userApi.signOut(); // We don't care about the observable that's being returned.
   }
 
 }

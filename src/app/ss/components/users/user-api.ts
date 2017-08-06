@@ -13,6 +13,7 @@ export abstract class UserApi {
     /** signIn is a method that takes a username, password, and rememberMe as arguments,  Returns an Observable. */
     signIn: (username: string, password: string, rememberMe: boolean) => Observable<any>;
 
+    /** signOut does not take any arguments and returns an observable (which we may or may not need because signing out could always be successful.) */
     signOut: () => Observable<any>;
 
     // Other methods we should consider adding:

@@ -8,7 +8,11 @@
 </div>
 
 <div *ngIf="frameworkConfigService.showUserControls">
-  <span>SIGN IN</span>
-  <!-- <span>Sutton Yamanashi</span>
-  <div class="sign-out" (click)="signOut()">SIGN OUT</div> -->
+  <!-- <span>SIGN IN</span> -->
+  <!--
+    Note: The user only sees this screen if they are logged in when AuthGuardService guards the authenticated children routes properly.
+    TODO: Add a getUserFullName() method to the abstract UserAPI.  Use this to display the user's name.
+    -->
+  <span>Sutton Yamanashi</span>
+  <div class="sign-out" (click)="signOut()">SIGN OUT</div>
 </div>

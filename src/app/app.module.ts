@@ -31,8 +31,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     SsModule,
   ],
   providers: [
-    UserService, // same as pointing the token 'UserService' to the class 'UserService' like this: { provide: UserService, userClass: UserService }
-    { provide: UserApi, useExisting: UserService }, // Provides the UserApi Token that (points to) binds the app UserService to the framework UserApi. Now we can inject the UserApi token into our framework sign-in component form.
+    UserService, // Shorthand for pointing the token 'UserService' to the class 'UserService' like this: { provide: UserService, userClass: UserService }.
+    { provide: UserApi, useExisting: UserService }, // Dependency Injection: Provides the UserApi "Token" that (points to) binds the app UserService to the framework UserApi. Now we can inject the UserApi token into our framework sign-in component form.
     AuthGuardService,
   ],
   bootstrap: [AppComponent]

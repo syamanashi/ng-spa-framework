@@ -50,10 +50,12 @@ export class UserService implements UserApi {
     }
   }
 
+  /** signOut does not take any arguments and returns an observable (which we may or may not need because signing out could always be successful.) */
+  // TODO: Add Call to a REST API service which would also call a REST API to log the sign-out event.
   signOut(): Observable<any> {
     this.isAuthenticated = false;
-    this.router.navigate(['/signin']);
-    return Observable.of({}); // returns empty reservable
+    this.router.navigate(['signin']);
+    return Observable.of({}); // Returns empty reservable
   }
 
 }
