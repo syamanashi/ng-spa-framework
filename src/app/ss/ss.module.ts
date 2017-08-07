@@ -52,6 +52,8 @@ import { PanelComponent } from './components/panels/panel/panel.component';
     FrameworkBodyComponent,
     DynamicFormComponent,
     PanelComponent,
+    ScreenLargeDirective,
+    ScreenBelowLargeDirective,
   ],
   providers: [FrameworkConfigService, ScreenService, MenuService],
 })
