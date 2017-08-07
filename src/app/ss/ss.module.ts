@@ -21,6 +21,7 @@ import { SignInComponent } from './components/users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './components/users/register-user/register-user.component';
 import { DynamicFieldComponent } from './components/dynamic-forms/dynamic-field/dynamic-field.component';
 import { DynamicFormComponent } from './components/dynamic-forms/dynamic-form/dynamic-form.component';
+import { PanelComponent } from './components/panels/panel/panel.component';
 
 @NgModule({
   imports: [
@@ -45,8 +46,13 @@ import { DynamicFormComponent } from './components/dynamic-forms/dynamic-form/dy
     RegisterUserComponent,
     DynamicFieldComponent,
     DynamicFormComponent,
+    PanelComponent,
   ],
-  exports: [FrameworkBodyComponent, DynamicFormComponent],
+  exports: [
+    FrameworkBodyComponent,
+    DynamicFormComponent,
+    PanelComponent,
+  ],
   providers: [FrameworkConfigService, ScreenService, MenuService],
 })
 export class SsModule { }
