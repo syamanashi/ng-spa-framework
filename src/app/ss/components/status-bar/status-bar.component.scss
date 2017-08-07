@@ -2,11 +2,16 @@
     background-color: green;
     min-height: 26px;
     max-height: 26px;
+    height: 26px;
+    // align-self: flex-end;
+    min-width: 100vw;
+    // flex: none; /* 2 */
+    // position: absolute;
+    // bottom: 0;
 }
 
 .copy-right {
-    margin-top: 5px;
-    margin-left: 10px;
+    margin: 5px 10px 0 10px;
     color: #eee;
     font-size: 11px;
 }

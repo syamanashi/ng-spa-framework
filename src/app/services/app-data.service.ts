@@ -24,6 +24,11 @@ export class AppDataService {
 
   constructor(private userService: UserService) { } // UserService will be useful for future authorization considerations and with tracking who is doing what with the country data.
 
+  /**
+   * TODO: Each of these methods will make an http call to the server in production.
+   * Currently, delay(2000) is used to add a 2 second wait to simulate the http request latency.
+   */
+
   createCountry(vm: Country): Observable<any> {
     // return Observable.of({}).delay(2000).flatMap(x => Observable.throw('Unable to create country'))
     let newId = 0;
@@ -50,9 +55,9 @@ export class AppDataService {
   }
 
   updateCountry(updatedCountry: Country): Observable<any> {
+    // return Observable.of({}).delay(2000).flatMap(x => Observable.throw('Unable to update country'));
     const country = this.countries.find(c => c.id === updatedCountry.id);
     Object.assign(country, updatedCountry);
     return Observable.of(country).delay(2000);
-    // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw(''));
   }
 }

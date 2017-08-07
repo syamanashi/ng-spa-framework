@@ -1,15 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  min-height: 100vh;
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    // font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif; // font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 // don't do this:
 // .title-bar {
 //     background-color: pink !important;
 // }
-
 // instead, do this for 'app' prefixed classes:
 .app-title-bar {
-    background-color: #fff;
+  background-color: #fff;
 }

@@ -34,6 +34,7 @@ export class CountryMaintComponent {
   }
 
   createCountry() {
+    // Route user to country-detail with an operation of 'create' and arbitrary ID of 0.
     this.router.navigate(['/authenticated/country-detail', 0, 'create']);
   }
 

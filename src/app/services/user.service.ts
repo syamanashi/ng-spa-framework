@@ -13,7 +13,7 @@ import { UserApi } from '../ss/components/users/user-api';
 @Injectable()
 export class UserService implements UserApi {
 
-  isAuthenticated = false;
+  isAuthenticated = true; // TODO: Set this to false to force user to login.
 
   /** Mock development variables to help test error handling. */
   // TODO: Convert these into config vars to help with development:

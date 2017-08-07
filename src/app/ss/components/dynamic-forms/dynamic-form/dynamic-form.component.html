@@ -1,0 +1,34 @@
+<div> <!-- div for when we want to style the entire contents in the future -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div *ngFor="let field of vmDefinition">
+      <ss-dynamic-field [field]="field" [form]="form" [operation]="operation" [submitted]="submitted"></ss-dynamic-field>
+    </div>
+
+    <!--Form-level error message-->
+    <div *ngIf="errorMessage " class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="status != 'waiting'">
+      <div *ngIf="operation === 'details'">
+        <button type="button" class="btn" (click)="onBack()">Back</button>
+        <button type="button" class="btn btn-primary" (click)="onEdit()">Edit</button>
+      </div>
+      <div *ngIf="operation === 'edit'">
+        <button type="button" class="btn" (click)="onCancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+      </div>
+      <div *ngIf="operation === 'create'">
+        <button type="button" class="btn" (click)="onBack()">Back</button>
+        <button type="button" class="btn btn-primary" (click)="onCreate()">Create</button>
+      </div>
+    </div>
+
+    <!-- Whenever user is waiting on an operation, the status will have been set to 'waiting'. -->
+    <div *ngIf="status === 'waiting'">
+      Waiting...
+    </div>
+
+  </form>
+</div>
