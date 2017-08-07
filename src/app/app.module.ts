@@ -16,6 +16,7 @@ import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AppDataService } from './services/app-data.service';
 import { CountryPanelComponent } from './components/panels/country-panel/country-panel.component';
+import { ImagePanelComponent } from './components/panels/image-panel/image-panel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CountryPanelComponent } from './components/panels/country-panel/country
     CountryListComponent,
     CountryMaintComponent,
     AuthenticatedUserComponent,
-    CountryPanelComponent
+    CountryPanelComponent,
+    ImagePanelComponent
   ],
   imports: [
     BrowserModule,
